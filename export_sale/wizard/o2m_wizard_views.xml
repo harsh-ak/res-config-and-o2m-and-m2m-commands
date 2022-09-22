@@ -1,0 +1,61 @@
+<odoo>
+
+	
+<record id="action_o2m"
+        model="ir.actions.act_window">
+        <field name="name">Add products</field>
+        <field name="res_model">add.product</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+        <menuitem id="o2m_menu"
+                    name="Add Products"
+                    action="action_o2m"
+                    parent="sale.sale_order_menu"/>
+
+
+        <record id="add_product_form" model="ir.ui.view">
+
+        <field name="name">add.product.form</field>
+        <field name="model">add.product</field>
+        <field name="arch" type="xml">
+            <form>
+
+                    <group>
+                        <field name="quotation_id"/>
+                        <field name="product_ids">
+
+                        <tree editable="bottom">
+
+                            <field name="product_id"/>
+                            <field name="quantity"/>
+                            <field name="unit_price"/>
+
+                        </tree>
+                            
+                        <form>
+                            <group>
+                                <field name="product_id"/>
+                                <field name="quantity"/>
+                                <field name="unit_price"/>
+                            </group>
+
+                        </form>
+                    </field>
+                         <field name="partner_ids" widget="many2many_tags"/>
+                    </group>
+
+                      
+
+                <footer>
+                    <button name ="add_product" string="Submit"  class="btn-primary" type="object"/>
+                    <button string="Discard" class="btn-secondary" special="cancel"/>
+                </footer>
+                
+            </form>
+        </field>
+
+    </record>
+
+</odoo>

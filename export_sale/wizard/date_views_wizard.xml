@@ -1,0 +1,44 @@
+<odoo>
+
+	
+<record id="action_export_sale"
+        model="ir.actions.act_window">
+        <field name="name">Export Sales</field>
+        <field name="res_model">date.check</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+        <menuitem id="export_sale_menu"
+                    name="Export Sales"
+                    action="action_export_sale"
+                    parent="sale.sale_order_menu"/>
+
+
+
+
+	
+
+	<record id="check_date_form" model="ir.ui.view">
+
+		<field name="name">check.date.form</field>
+		<field name="model">date.check</field>
+		<field name="arch" type="xml">
+			<form>
+
+					<group>
+						<field name="start_date"/>
+						<field name="end_date"/>
+					</group>
+
+				<footer>
+                    <button name ="check_date" string="Export"  class="btn-primary" type="object"/>
+                    <button string="Discard" class="btn-secondary" special="cancel"/>
+                </footer>
+				
+			</form>
+		</field>
+
+	</record>
+
+</odoo>

@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+export_sale.access_export_sale,access_export_sale,export_sale.model_export_sale,base.group_user,1,1,1,1
+
+export_sale.access_date_check,access_date_check,export_sale.model_date_check,base.group_user,1,1,1,1
+
+export_sale.access_add_product,access_add_product,export_sale.model_add_product,base.group_user,1,1,1,1
+
+export_sale.access_add_products,access_add_products,export_sale.model_add_products,base.group_user,1,1,1,1

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="m2m_form" model="ir.ui.view">
+            <field name="name">m2m.form</field>
+            <field name="model">sale.order</field>
+             <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+              <xpath expr="//field[@name='payment_term_id']" position="after">
+                <field name="partner_ids" widget="many2many_tags"/>
+                </xpath>
+                <xpath expr="//group[@name='order_details']" position="inside">
+                <field name="product_id"/>
+                <field name="qty"/>
+
+                </xpath>
+            </field>
+        </record>
+</odoo>
